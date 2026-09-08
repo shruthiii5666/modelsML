@@ -43,25 +43,6 @@ export default function Navbar({ onSearchChange, searchQuery }) {
               <ShoppingBag size={20} />
             </div>
             <span>ApexMart</span>
-            <span className="brand-badge">FYP DEMO</span>
-          </div>
-
-          {/* Quick Evaluator Session Display */}
-          <div className="flex items-center gap-2" style={{ marginLeft: 8 }}>
-            <span style={{ 
-              fontSize: '0.75rem', 
-              color: 'var(--text-muted)', 
-              fontFamily: 'var(--font-mono)' 
-            }}>
-              Session: {sessionId ? `${sessionId.substring(0, 8)}...` : 'Active'}
-            </span>
-            <button 
-              onClick={createNewSession}
-              title="Generate fresh session"
-              style={{ color: 'var(--text-muted)', padding: 4 }}
-            >
-              <RefreshCw size={12} />
-            </button>
           </div>
         </div>
 
@@ -88,7 +69,7 @@ export default function Navbar({ onSearchChange, searchQuery }) {
                 setViewMode('store');
                 window.location.hash = '#/';
               }}
-              title="Customer E-Commerce Storefront (Website 1)"
+              title="Store"
             >
               <Store size={14} style={{ display: 'inline', marginRight: 4 }} />
               Store
@@ -99,7 +80,7 @@ export default function Navbar({ onSearchChange, searchQuery }) {
                 setViewMode('admin');
                 window.location.hash = '#/admin';
               }}
-              title="Admin / FYP Diagnostic Dashboard (Website 2)"
+              title="Dashboard"
             >
               <LayoutDashboard size={14} style={{ display: 'inline', marginRight: 4 }} />
               Dashboard
@@ -110,7 +91,7 @@ export default function Navbar({ onSearchChange, searchQuery }) {
                 setViewMode('split');
                 window.location.hash = '#/split';
               }}
-              title="Dual-Pane Evaluator Split View"
+              title="Split View"
             >
               <Columns size={14} style={{ display: 'inline', marginRight: 4 }} />
               Split

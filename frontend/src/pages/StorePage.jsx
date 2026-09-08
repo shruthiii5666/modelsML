@@ -97,7 +97,7 @@ export default function StorePage({ searchQuery }) {
               <p className="hero-desc">
                 Discover verified products from world-class manufacturers. Enjoy high performance, transparent pricing, and instant 2-day delivery.
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center">
                 <button 
                   className="btn btn-primary btn-lg"
                   onClick={() => setSelectedCategory('computers.peripherals.printer')}
@@ -164,21 +164,6 @@ export default function StorePage({ searchQuery }) {
         {/* CRITICAL: Exactly ONE Recommendation Section */}
         <RecommendationShelf />
       </main>
-
-      {/* Footer */}
-      <footer style={{ background: 'var(--bg-surface)', borderTop: '1px solid var(--border-color)', padding: '40px 0', marginTop: 64 }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 20 }}>
-          <div>
-            <div style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--primary)', marginBottom: 4 }}>ApexMart E-Commerce</div>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Final Year Project: Trust-Aware E-Commerce Recommendation Using Brand Risk Analysis</p>
-          </div>
-          <div style={{ display: 'flex', gap: 24, fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-            <span>Secure Checkout</span>
-            <span>Verified Sellers</span>
-            <span>Academic Prototype</span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

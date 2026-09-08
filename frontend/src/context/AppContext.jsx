@@ -3,13 +3,24 @@ import { logEvent, getSampleSessions } from '../services/api';
 
 const AppContext = createContext();
 
-const DEFAULT_SESSION = "0f65dee0-ae4d-460e-bb66-3da1bbbaec6b";
+function getInitialSessionId() {
+  const saved = localStorage.getItem('fyp_session_id');
+  const evalSessions = [
+    "0f65dee0-ae4d-460e-bb66-3da1bbbaec6b",
+    "2bb8e316-9856-441e-a858-5723f916b456",
+    "5a5350f2-c5d7-4230-8fec-3ac32c134ab3"
+  ];
+  if (saved && !evalSessions.includes(saved)) {
+    return saved;
+  }
+  const newId = 'live_' + Math.random().toString(36).substring(2, 9);
+  localStorage.setItem('fyp_session_id', newId);
+  return newId;
+}
 
 export function AppProvider({ children }) {
-  // Session management
-  const [sessionId, setSessionId] = useState(() => {
-    return localStorage.getItem('fyp_session_id') || DEFAULT_SESSION;
-  });
+  // Session management - starts with fresh live customer session
+  const [sessionId, setSessionId] = useState(getInitialSessionId);
 
   // View Mode: 'store' | 'admin' | 'split'
   const [viewMode, setViewMode] = useState(() => {
@@ -19,20 +30,11 @@ export function AppProvider({ children }) {
     return 'store';
   });
 
-  // Cart state
+  // Cart state - starts empty for a live session unless restored from storage
   const [cart, setCart] = useState(() => {
     try {
       const saved = localStorage.getItem('fyp_cart');
-      return saved ? JSON.parse(saved) : [
-        {
-          product_id: 1500227,
-          title: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer",
-          brand: "epson",
-          price: 149.99,
-          quantity: 1,
-          image_url: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&auto=format&fit=crop&q=80"
-        }
-      ];
+      return saved ? JSON.parse(saved) : [];
     } catch {
       return [];
     }

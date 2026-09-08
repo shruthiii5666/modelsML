@@ -416,52 +416,75 @@ function getOrCreateMockSession(sessionId) {
   if (!mockSessionStore.activeSessions[sessionId]) {
     // Default mock setup tailored to the session if it matches a preset
     const preset = SAMPLE_SESSIONS.find(s => s.session_id === sessionId);
-    const intentP = preset ? preset.default_intent : 0.8105;
-    const initialCategory = preset ? preset.category : "computers.peripherals.printer";
-    
-    // Default initial viewed and carted products
-    const initialViewed = [
-      { product_id: 1500227, title: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer", brand: "epson", price: 149.99 }
-    ];
-    const initialCart = [
-      {
-        product_id: 1500227,
-        title: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer",
-        brand: "epson",
-        price: 149.99,
-        quantity: 1,
-        image_url: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&auto=format&fit=crop&q=80"
-      }
-    ];
-
-    mockSessionStore.activeSessions[sessionId] = {
-      session_id: sessionId,
-      session_start_time: "14:02:10",
-      created_at: new Date(Date.now() - 252000).toISOString(),
-      duration_seconds: 252,
-      current_activity: "Viewing Epson EcoTank L3150 Printer",
-      active_category: initialCategory,
-      current_product: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer",
-      current_brand: "epson",
-      viewed_products: initialViewed,
-      cart_items: initialCart,
-      purchased_products: [],
-      events: [
-        { id: 1, timestamp: "14:02:10", event_type: "session_start", detail: "Session started" },
-        { id: 2, timestamp: "14:02:18", event_type: "search", detail: "Searched for 'printer'" },
-        { id: 3, timestamp: "14:02:22", event_type: "category_view", detail: "Category viewed: Computers & Printers" },
-        { id: 4, timestamp: "14:02:25", event_type: "product_view", product_id: 1500227, brand: "epson", title: "Epson EcoTank L3150", detail: "Product viewed: Epson EcoTank L3150" },
-        { id: 5, timestamp: "14:02:30", event_type: "product_click", product_id: 1500227, brand: "epson", title: "Epson EcoTank L3150", detail: "Product clicked: Epson EcoTank L3150" },
-        { id: 6, timestamp: "14:03:10", event_type: "cart", product_id: 1500227, brand: "epson", title: "Epson EcoTank L3150", detail: "Added to cart: Epson EcoTank L3150" }
-      ],
-      model1_intent: {
-        purchase_probability: intentP,
-        predicted_purchase: intentP >= 0.5 ? 1 : 0,
-        intent_level: intentP >= 0.5 ? "High Purchase Intent" : "Browsing / Low Intent",
-        intent_multiplier: Number((1.0 + 1.0 * intentP).toFixed(4)),
-        model_name: "Stacking Meta-Ensemble (LightGBM + XGBoost + RF)"
-      }
-    };
+    if (preset) {
+      const intentP = preset.default_intent;
+      const initialCategory = preset.category;
+      mockSessionStore.activeSessions[sessionId] = {
+        session_id: sessionId,
+        session_start_time: "14:02:10",
+        created_at: new Date(Date.now() - 252000).toISOString(),
+        duration_seconds: 252,
+        current_activity: "Viewing Epson EcoTank L3150 Printer",
+        active_category: initialCategory,
+        current_product: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer",
+        current_brand: "epson",
+        viewed_products: [
+          { product_id: 1500227, title: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer", brand: "epson", price: 149.99 }
+        ],
+        cart_items: [
+          {
+            product_id: 1500227,
+            title: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer",
+            brand: "epson",
+            price: 149.99,
+            quantity: 1,
+            image_url: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&auto=format&fit=crop&q=80"
+          }
+        ],
+        purchased_products: [],
+        events: [
+          { id: 1, timestamp: "14:02:10", event_type: "session_start", detail: "Session started" },
+          { id: 2, timestamp: "14:02:18", event_type: "search", detail: "Searched for 'printer'" },
+          { id: 3, timestamp: "14:02:22", event_type: "category_view", detail: "Category viewed: Computers & Printers" },
+          { id: 4, timestamp: "14:02:25", event_type: "product_view", product_id: 1500227, brand: "epson", title: "Epson EcoTank L3150", detail: "Product viewed: Epson EcoTank L3150" },
+          { id: 5, timestamp: "14:02:30", event_type: "product_click", product_id: 1500227, brand: "epson", title: "Epson EcoTank L3150", detail: "Product clicked: Epson EcoTank L3150" },
+          { id: 6, timestamp: "14:03:10", event_type: "cart", product_id: 1500227, brand: "epson", title: "Epson EcoTank L3150", detail: "Added to cart: Epson EcoTank L3150" }
+        ],
+        model1_intent: {
+          purchase_probability: intentP,
+          predicted_purchase: intentP >= 0.5 ? 1 : 0,
+          intent_level: intentP >= 0.5 ? "High Purchase Intent" : "Browsing / Low Intent",
+          intent_multiplier: Number((1.0 + 1.0 * intentP).toFixed(4)),
+          model_name: "Stacking Meta-Ensemble (LightGBM + XGBoost + RF)"
+        }
+      };
+    } else {
+      // Live session: clean state starting with 0 events
+      const now = new Date();
+      const timeStr = now.toTimeString().split(' ')[0];
+      mockSessionStore.activeSessions[sessionId] = {
+        session_id: sessionId,
+        session_start_time: timeStr,
+        created_at: now.toISOString(),
+        duration_seconds: 1,
+        current_activity: "Session started",
+        active_category: "computers.peripherals.printer",
+        current_product: "Epson EcoTank L3150 Multi-Function Wi-Fi Printer",
+        current_brand: "epson",
+        viewed_products: [],
+        cart_items: [],
+        purchased_products: [],
+        events: [],
+        interaction_count: 0,
+        model1_intent: {
+          purchase_probability: 0.05,
+          predicted_purchase: 0,
+          intent_level: "Browsing / Low Intent",
+          intent_multiplier: 1.05,
+          model_name: "Stacking Meta-Ensemble (LightGBM + XGBoost + RF)"
+        }
+      };
+    }
   }
   return mockSessionStore.activeSessions[sessionId];
 }
