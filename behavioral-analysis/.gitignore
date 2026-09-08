@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.vscode/
+.env
+
+data/raw/
+data/processed/
+data/output/
+
+*.pkl
+*.joblib
