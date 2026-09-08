@@ -1,0 +1,452 @@
+[
+  {
+    "phase": "Phase 3",
+    "test_name": "Pipeline Exit Code",
+    "status": "PASS",
+    "details": "Exited successfully in 9.54s"
+  },
+  {
+    "phase": "Phase 3",
+    "test_name": "Sessions Processed",
+    "status": "PASS",
+    "details": "1,000 sessions processed"
+  },
+  {
+    "phase": "Phase 3",
+    "test_name": "Candidates Generated",
+    "status": "PASS",
+    "details": "29,554 candidates"
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Config Path Resolution",
+    "status": "PASS",
+    "details": "D:\\FYP\\implementation\\2019-Oct.csv"
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Config Alpha/Beta Types",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Candidate Gen: Catalog Columns",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Trust Integrator: Intent Loaded",
+    "status": "PASS",
+    "details": "1,069 sessions"
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Trust Integrator: Trust Loaded",
+    "status": "PASS",
+    "details": "765 brands"
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Ranking: Score Non-NaN & Finite",
+    "status": "PASS",
+    "details": "Score: 0.9600000000000002"
+  },
+  {
+    "phase": "Phase 4",
+    "test_name": "Evaluation: Metric Computation",
+    "status": "PASS",
+    "details": "NDCG@5=1.0000"
+  },
+  {
+    "phase": "Phase 5",
+    "test_name": "Math Check (P=0.85, T=0.95, Risk=Low)",
+    "status": "PASS",
+    "details": "Expected: 1.757500 | Program: 1.757500 | Diff: 0.0e+00"
+  },
+  {
+    "phase": "Phase 5",
+    "test_name": "Math Check (P=0.85, T=0.2, Risk=High)",
+    "status": "PASS",
+    "details": "Expected: 0.074000 | Program: 0.074000 | Diff: 0.0e+00"
+  },
+  {
+    "phase": "Phase 5",
+    "test_name": "Math Check (P=0.05, T=0.95, Risk=Low)",
+    "status": "PASS",
+    "details": "Expected: 0.798000 | Program: 0.798000 | Diff: 0.0e+00"
+  },
+  {
+    "phase": "Phase 5",
+    "test_name": "Math Check (P=0.05, T=0.2, Risk=High)",
+    "status": "PASS",
+    "details": "Expected: 0.033600 | Program: 0.033600 | Diff: 0.0e+00"
+  },
+  {
+    "phase": "Phase 5",
+    "test_name": "Math Check (P=0.4, T=0.6, Risk=Medium)",
+    "status": "PASS",
+    "details": "Expected: 0.315000 | Program: 0.315000 | Diff: 0.0e+00"
+  },
+  {
+    "phase": "Phase 5",
+    "test_name": "Math Check (P=0.7, T=0.8, Risk=Low)",
+    "status": "PASS",
+    "details": "Expected: 0.787200 | Program: 0.787200 | Diff: 0.0e+00"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "1. Valid Model 2 Brand",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "2. Unscored Brand Fallback",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "3. Unknown Brand Fallback",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "4. Missing Product ID",
+    "status": "PASS",
+    "details": "Safely filtered"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "5. Conflicting Brand Resolver",
+    "status": "PASS",
+    "details": "Resolved to mode: apple"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "6. Session with 1 Candidate",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "7. Fewer than K Candidates",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "8. Exactly K Candidates",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "9. More than K Candidates",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "10. Empty Candidate Set",
+    "status": "PASS",
+    "details": "Handled cleanly"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "11. Missing Purchase Prob Fallback",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "12. Purchase Prob = 0.0",
+    "status": "PASS",
+    "details": "Score: 1.0"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "13. Purchase Prob = 1.0",
+    "status": "PASS",
+    "details": "Score: 2.0"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "14. Trust Score = 0.0",
+    "status": "PASS",
+    "details": "Score: 0.0"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "15. Trust Score = 1.0",
+    "status": "PASS",
+    "details": "Score: 1.0"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "16. Suspiciousness = 0.0",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "17. Suspiciousness = 1.0",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "18. Low-Risk Multiplier = 1.0",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "19. Medium-Risk Multiplier = 0.75",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "20. High-Risk Multiplier = 0.20",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "21. Duplicate Product Deduplication",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "22. NaN Value Imputation",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "23. Infinite Value Protection",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "24. Invalid Risk Level Safe Default",
+    "status": "PASS",
+    "details": "Score: 0.75"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "25. Empty Session Filter",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "26. High-Risk Demotion despite High Intent",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "27. Low Intent + High Trust Computation",
+    "status": "PASS",
+    "details": "Score: 0.7997"
+  },
+  {
+    "phase": "Phase 6",
+    "test_name": "28. High Intent + High Trust Score Boost",
+    "status": "PASS",
+    "details": "Score: 1.9110"
+  },
+  {
+    "phase": "Phase 7",
+    "test_name": "Real Models Materially Influence NDCG",
+    "status": "PASS",
+    "details": "Diff: 0.0729"
+  },
+  {
+    "phase": "Phase 7",
+    "test_name": "Real Models Eliminate High Risk",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 8",
+    "test_name": "Trust Actually Alters Top-5 Product Order",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 9",
+    "test_name": "Purchase-Only Treats All Brands Identically",
+    "status": "PASS",
+    "details": "Scores: {1.8}"
+  },
+  {
+    "phase": "Phase 9",
+    "test_name": "Hard-Filter Removes High-Risk from Top-2",
+    "status": "PASS",
+    "details": "Top 2: [1002, 1003]"
+  },
+  {
+    "phase": "Phase 9",
+    "test_name": "Trust-Aware Correctly Orders Low < Med < High Risk",
+    "status": "PASS",
+    "details": "Ranks: {'globber': 1, 'samsung': 2, 'portcase': 3}"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: product_catalog.csv",
+    "status": "PASS",
+    "details": "1,890,008 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: product_catalog.csv",
+    "status": "PASS",
+    "details": "30,223 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: recommendation_candidates.csv",
+    "status": "PASS",
+    "details": "5,994,388 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: recommendation_candidates.csv",
+    "status": "PASS",
+    "details": "29,554 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: topk_recommendations_trust_aware.csv",
+    "status": "PASS",
+    "details": "2,963,789 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: topk_recommendations_trust_aware.csv",
+    "status": "PASS",
+    "details": "10,000 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: topk_recommendations_purchase_only.csv",
+    "status": "PASS",
+    "details": "2,952,791 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: topk_recommendations_purchase_only.csv",
+    "status": "PASS",
+    "details": "10,000 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: model_comparison_table.csv",
+    "status": "PASS",
+    "details": "960 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: model_comparison_table.csv",
+    "status": "PASS",
+    "details": "4 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: sensitivity_analysis_beta.csv",
+    "status": "PASS",
+    "details": "535 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: sensitivity_analysis_beta.csv",
+    "status": "PASS",
+    "details": "5 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Valid: before_after_case_studies.csv",
+    "status": "PASS",
+    "details": "2,856 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "CSV Non-Empty: before_after_case_studies.csv",
+    "status": "PASS",
+    "details": "34 rows"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "Plot Exists: trust_vs_utility_tradeoff.png",
+    "status": "PASS",
+    "details": "176,236 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "Plot Image Readable: trust_vs_utility_tradeoff.png",
+    "status": "PASS",
+    "details": "Dimensions: (2400, 1500)"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "Plot Exists: high_risk_exposure_comparison.png",
+    "status": "PASS",
+    "details": "168,071 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "Plot Image Readable: high_risk_exposure_comparison.png",
+    "status": "PASS",
+    "details": "Dimensions: (2400, 1500)"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "Plot Exists: rank_displacement_distribution.png",
+    "status": "PASS",
+    "details": "102,565 bytes"
+  },
+  {
+    "phase": "Phase 10",
+    "test_name": "Plot Image Readable: rank_displacement_distribution.png",
+    "status": "PASS",
+    "details": "Dimensions: (2400, 1500)"
+  },
+  {
+    "phase": "Phase 11",
+    "test_name": "Ground Truth Target NOT in Ranking Features",
+    "status": "PASS",
+    "details": ""
+  },
+  {
+    "phase": "Phase 11",
+    "test_name": "Model 1 Test Predictions Pure Pre-Purchase",
+    "status": "PASS",
+    "details": "Model 1 features exclude all purchase events"
+  },
+  {
+    "phase": "Phase 13",
+    "test_name": "Deterministic Ranking Output",
+    "status": "PASS",
+    "details": "Max difference: 0.0"
+  },
+  {
+    "phase": "Phase 14",
+    "test_name": "Ranking Execution Time (< 5s)",
+    "status": "PASS",
+    "details": "0.03s for 29,554 candidates"
+  },
+  {
+    "phase": "Phase 14",
+    "test_name": "Evaluation Execution Time (< 5s)",
+    "status": "PASS",
+    "details": "0.35s for 1,000 sessions"
+  }
+]
